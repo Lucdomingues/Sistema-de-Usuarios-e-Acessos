@@ -52,6 +52,8 @@ Contamos com 3 diagramas essenciais, para facilitarmos o entendimento de algumas
 
 Vamos ter dois Dockerfiles gerando um a imagem do backend e outro a do frontend, a imagem para o DB é utilizada a mysql:8.4 para garantirmos que nada quebre futuramente com atualizações. Todos os containers são orquestrados via **Docker Compose**, escolhido por ser mais simples, ideal para projeto pequeno, porém, para projetos maiores e que necessitam de escala alta é interessante considerar soluções como Kubernetes.
 
+### Diagrama de Containers
+
 ![Diagrama de Containers](./Diagramas/Diagrama-de-containers.png)
 
 ### Volumes:
