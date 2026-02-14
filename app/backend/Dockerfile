@@ -13,7 +13,7 @@ RUN npm run build
 
 # ------------------ Etapa 2 - Produção ------------------
 
-FROM node:24.13.1-alpine AS runnig
+FROM node:24.13.1-alpine
 
 WORKDIR /backend
 
@@ -23,7 +23,7 @@ RUN npm ci --omit=dev
 
 COPY --from=building-stage /backend/dist ./dist
 
-EXPOSE 8080
+EXPOSE 3000
 
 CMD [ "node", "dist/server.js" ]
 
