@@ -47,3 +47,29 @@ Contamos com 3 diagramas essenciais, para facilitarmos o entendimento de algumas
 ### Diagrama arquitetural
 
 ![Diagrama Arquitetural](./Diagramas/Diagrama_Arquitetural.png)
+
+## Docker
+
+Vamos ter dois Dockerfiles gerando um a imagem do backend e outro a do frontend, a imagem para o DB é utilizada a mysql:8.4 para garantirmos que nada quebre futuramente com atualizações. Todos os containers são orquestrados via **Docker Compose**, escolhido por ser mais simples, ideal para projeto pequeno, porém, para projetos maiores e que necessitam de escala alta é interessante considerar soluções como Kubernetes.
+
+![Diagrama de Containers](./Diagramas/Diagrama-de-containers.png)
+
+### Volumes:
+
+Apenas um volume para o database chamado `mysql_data`, persiste dados de `/var/lib/mysql`, onde o mysql guarda todos os dados do DB
+
+`docker compose up`
+
+1. Cria o volume mysql_data (se não existir)
+
+2. Cria o container
+
+3. Conecta o volume ao caminho /var/lib/mysql
+
+4. Tudo que o MySQL salvar ali vai para o volume
+
+5. Se o container morrer → volume continua existindo
+
+### Redes virtuais
+
+Foram criadas duas redes a `virtual-front` e `virtual-db`
