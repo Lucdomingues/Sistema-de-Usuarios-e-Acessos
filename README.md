@@ -75,3 +75,10 @@ Apenas um volume para o database chamado `mysql_data`, persiste dados de `/var/l
 ### Redes virtuais
 
 Foram criadas duas redes a `virtual-front` e `virtual-db`
+
+## Backend
+
+### Configurações iniciais
+
+- Utilizando importação e exportação com ES Module
+- Para rodar o node em desenvolvimento use `npm run dev`, está rodando com tsx para hot-reload

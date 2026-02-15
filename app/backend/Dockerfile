@@ -25,7 +25,7 @@ COPY --from=building-stage /backend/dist ./dist
 
 EXPOSE 3000
 
-CMD [ "node", "dist/server.js" ]
+CMD [ "node", "dist/server/server.js" ]
 
 # npm ci, usa exatamente o package-lock.json, Não altera nada, Instala mais rápido, É determinístico, Se lock estiver inconsistente → falha
 
